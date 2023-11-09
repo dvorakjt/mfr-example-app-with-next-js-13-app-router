@@ -1,0 +1,35 @@
+.button_gray, .button_blue {
+  font-family: var(--font-open-sans);
+  font-weight: 700;
+  font-size: 15px;
+  color : white;
+  width : 112.5px;
+  height : 37.5px;
+  border-radius: 5px;
+  border : none;
+  box-shadow: 3px 4px 4px 0px rgba(255, 255, 255, 0.59) inset, 4px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button_gray:hover, .button_blue:hover {
+  cursor: pointer;
+}
+
+.button_gray:active, .button_blue:active {
+  transform : translate(0, 1px);
+}
+
+.button_gray {
+  background-color: #636363;
+}
+
+.button_gray:hover {
+  background-color: #434343;
+}
+
+.button_blue {
+  background-color: #119BFF;;
+}
+
+.button_blue:hover {
+  background-color: #0086E7;
+}

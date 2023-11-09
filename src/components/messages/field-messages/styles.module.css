@@ -1,0 +1,21 @@
+.messages_container {
+  margin-top : 7.5px;
+  max-width: 100%;
+}
+
+.message {
+  display : block;
+  margin-bottom : 7.5px;
+  font-family : var(--font-open-sans);
+  font-size : 13px;
+  font-weight : 400;
+  color: #181818;
+}
+
+.message[data-validity="VALID"] {
+  color : #009206;
+}
+
+.message[data-validity="ERROR"], .message[data-validity="INVALID"] {
+  color : red;
+}
