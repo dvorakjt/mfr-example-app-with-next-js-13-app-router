@@ -1,5 +1,6 @@
 import {
   NestedFormTemplate,
+  Validity,
   required
 } from 'modeled-forms-react';
 import zipState from 'zip-state';
@@ -32,6 +33,8 @@ export const addressTemplate : NestedFormTemplate = {
     [AddressFields.STATE] : {
       defaultValue : US_STATE_ABBREVIATIONS[0],
       syncValueControlFn : ({ [AddressFields.ZIP] : zip }) => {
+        if(zip.validity < Validity.VALID_FINALIZABLE) return;
+
         const stateAbbreviation = zipState(zip.value);
 
         if(!stateAbbreviation) return;

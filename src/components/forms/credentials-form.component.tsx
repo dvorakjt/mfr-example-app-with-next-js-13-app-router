@@ -10,9 +10,12 @@ import { ResetButton } from "../buttons/reset-button.component";
 import { RootFormFields } from "@/form-templates/root-form.template";
 import { CredentialsFields } from "@/form-templates/credentials.template";
 import { Spacer } from "../util/spacers/spacer.component";
+import { useRouter } from "next/navigation";
 import styles from './styles.module.css';
 
 export function CredentialsForm() {
+  const router = useRouter();
+
   return (
     <NestedFormAsForm fieldName={RootFormFields.CREDENTIALS} id='credentials' className={styles.form}>
       <Label fieldName={CredentialsFields.NAME}>Name</Label>
@@ -45,7 +48,7 @@ export function CredentialsForm() {
 
       <ButtonsContainer>
         <ResetButton />
-        <ConfirmButton>Continue</ConfirmButton>
+        <ConfirmButton onSuccess={() => router.push('/addresses')}>Continue</ConfirmButton>
       </ButtonsContainer>
     </NestedFormAsForm>
   );

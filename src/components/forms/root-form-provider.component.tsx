@@ -1,12 +1,16 @@
 'use client';
 import { RootFormProvider as BaseRootFormProvider } from "modeled-forms-react";
 import { rootFormTemplate } from "@/form-templates/root-form.template";
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-export function RootFormProvider({ children } : PropsWithChildren) {
+interface RootFormProps {
+  children? : ReactNode
+}
+
+export function RootFormProvider({ children } : RootFormProps) {
   return (
-    <BaseRootFormProvider template={rootFormTemplate}>
-      {children as any}
+    <BaseRootFormProvider template={rootFormTemplate} >
+      {children}
     </BaseRootFormProvider>
   )
 }

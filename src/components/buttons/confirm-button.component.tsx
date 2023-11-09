@@ -10,6 +10,6 @@ type ConfirmButtonProps = PropsWithoutClassName<BaseConfirmButtonProps>;
 
 export function ConfirmButton(props : PropsWithChildren<ConfirmButtonProps>) {
   return (
-    <BaseConfirmButton {...props} className={styles.button_blue}>Confirm</BaseConfirmButton>
+    <BaseConfirmButton {...props} className={styles.button_blue}>{props.children}</BaseConfirmButton>
   )
 }

@@ -7,7 +7,7 @@ type LabelProps = PropsWithoutClassName<BaseLabelProps>;
 export function Label({fieldName, children}: PropsWithChildren<LabelProps>) {
   return (
     <BaseLabel fieldName={fieldName} className={styles.label}>
-      {children as any}
+      {children}
     </BaseLabel>
   );
 }
