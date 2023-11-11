@@ -1,0 +1,10 @@
+.container {
+  display: block;
+  margin-top : 4px
+}
+
+.label {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 15px;
+}

@@ -1,4 +1,4 @@
-import { FormContext, NestedFormAsFieldset } from "modeled-forms-react";
+import { NestedFormAsFieldset } from "modeled-forms-react";
 import { AddressFields } from "@/form-templates/address.template";
 import { Label } from "../labels/label.component";
 import { Input } from "../inputs/input/input.component";
@@ -7,7 +7,6 @@ import { FieldMessages } from "../messages/field-messages/field-messages.compone
 import { Spacer } from "../util/spacers/spacer.component";
 import { US_STATE_ABBREVIATIONS } from "@/form-templates/util/us-states/us-state-abbreviations";
 import styles from './styles.module.css';
-import { useContext } from "react";
 
 interface AddressFieldsetProps {
   fieldName : string;
@@ -15,18 +14,10 @@ interface AddressFieldsetProps {
 }
 
 export function AddressFieldset({ fieldName, legend } : AddressFieldsetProps) {
-  const formCtx = useContext(FormContext);
-  if(!formCtx) throw new Error('Cannot render AddressesForm outside of FormContext.');
-
-  const { useOmittableFormElement } = formCtx;
-
-  const { omitFormElement} = useOmittableFormElement(fieldName);
-
-  if(omitFormElement) return null;
-
   return (
     <NestedFormAsFieldset fieldName={fieldName} className={styles.fieldset}>
       <legend className={styles.legend}>{legend}</legend>
+
       <Spacer />
 
       <Label fieldName={AddressFields.STREET_LINE_1}>Street Address Line 1</Label>

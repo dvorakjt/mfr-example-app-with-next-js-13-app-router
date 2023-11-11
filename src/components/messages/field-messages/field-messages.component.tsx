@@ -8,6 +8,6 @@ type FieldMessagesProps = Omit<BaseFieldMessagesProps, "containerClassName" | "m
 
 export function FieldMessages(props : FieldMessagesProps) {
   return (
-    <BaseFieldMessages {...props} containerClassName={styles.message_container} messageClassName={styles.message} />
+    <BaseFieldMessages {...props} containerClassName={styles.messages_container} messageClassName={styles.message} />
   )
 }

@@ -1,5 +1,5 @@
 'use client';
-import { NestedFormAsForm } from "modeled-forms-react";
+import { NestedFormAsForm, SubmitButton } from "modeled-forms-react";
 import { Label } from "../labels/label.component";
 import { Input } from "../inputs/input/input.component";
 import { FieldMessages } from "../messages/field-messages/field-messages.component";
@@ -15,7 +15,7 @@ import styles from './styles.module.css';
 
 export function CredentialsForm() {
   const router = useRouter();
-
+  
   return (
     <NestedFormAsForm fieldName={RootFormFields.CREDENTIALS} id='credentials' className={styles.form}>
       <Label fieldName={CredentialsFields.NAME}>Name</Label>
@@ -42,14 +42,14 @@ export function CredentialsForm() {
 
       <Spacer />
 
-      <FormMessages idPrefix="credentials"/>
-
-      <Spacer />
-
       <ButtonsContainer>
         <ResetButton />
         <ConfirmButton onSuccess={() => router.push('/addresses')}>Continue</ConfirmButton>
       </ButtonsContainer>
+
+      <Spacer />
+
+      <FormMessages idPrefix="credentials"/>
     </NestedFormAsForm>
   );
 }

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { FormContext } from "modeled-forms-react";
 import styles from './styles.module.css';
-import { Spacer } from "../spacers/spacer.component";
 
 interface OmittableFieldControllerProps {
   fieldName : string;
@@ -18,12 +17,8 @@ export function OmittableFieldController({ fieldName, labelText} : OmittableFiel
 
   return (
     <>
-      <Spacer />
-      
       <input type='checkbox' onChange={() => setOmitFormElement(!omitFormElement)} checked={!omitFormElement} id={`omit-${fieldName}`} />
       <label htmlFor={`omit-${fieldName}`} className={styles.label}>{labelText}</label>
-
-      {!omitFormElement && <Spacer />}
     </>
   );
 }

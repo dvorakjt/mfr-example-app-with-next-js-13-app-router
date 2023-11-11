@@ -8,6 +8,6 @@ type FormMessagesProps = Omit<BaseFormMessagesProps, "containerClassName" | "mes
 
 export function FormMessages(props : FormMessagesProps) {
   return (
-    <BaseFormMessages {...props} containerClassName={styles.message_container} messageClassName={styles.message} />
+    <BaseFormMessages {...props} containerClassName={styles.messages_container} messageClassName={styles.message} />
   )
 }

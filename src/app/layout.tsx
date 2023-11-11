@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={openSans.variable}>
         <RootFormProvider>
+          <h1 className={openSans.className} style={{fontSize: '20px', textAlign : 'center'}}>Modeled Forms React Example App</h1>
           {children}
         </RootFormProvider>
       </body>

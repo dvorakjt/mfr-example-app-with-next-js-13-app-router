@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "modeled-forms-react": "^1.0.1",
+    "modeled-forms-react": "file:../modeled-forms-react",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
