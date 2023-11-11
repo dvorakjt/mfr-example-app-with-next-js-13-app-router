@@ -16,7 +16,7 @@ import styles from './styles.module.css';
 import { useRedirectToFirstInvalidNestedForm } from "@/hooks/use-redirect-to-first-invalid-nested-form";
 
 export function ProgrammingExperienceForm() {
-  useRedirectToFirstInvalidNestedForm();
+  // useRedirectToFirstInvalidNestedForm();
   const router = useRouter();
 
   return (

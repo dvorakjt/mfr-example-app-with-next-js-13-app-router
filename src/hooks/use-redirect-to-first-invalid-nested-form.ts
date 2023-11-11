@@ -14,9 +14,11 @@ export function useRedirectToFirstInvalidNestedForm() {
   const pathname = usePathname();
   const router = useRouter();
 
-  router.prefetch('/');
-  router.prefetch('/addresses');
-  router.prefetch('/programming-experience');
+  useEffect(() => {
+    router.prefetch('/');
+    router.prefetch('/addresses');
+    router.prefetch('/programming-experience');
+  }, [router]);
 
   useEffect(() => {
     switch(pathname) {
