@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { OmittableContent } from "modeled-forms-react";
 import { RootFormFields, AddressesFields } from "@/form-templates";
 import { 
@@ -17,6 +18,10 @@ import { useRouter } from "next/navigation";
 export function AddressesForm() {
   useRedirectToFirstInvalidNestedForm();
   const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch('/programming-experience');
+  }, [router]);
 
   return (
     <NestedFormAsForm fieldName={RootFormFields.ADDRESSES} id='addresses'>

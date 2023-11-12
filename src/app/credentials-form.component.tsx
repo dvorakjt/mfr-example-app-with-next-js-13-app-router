@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { CredentialsFields, RootFormFields } from "@/form-templates";
 import {
   NestedFormAsForm,
@@ -14,6 +15,10 @@ import { useRouter } from "next/navigation";
 
 export function CredentialsForm() {
   const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch('/addresses');
+  }, [router])
   
   return (
     <NestedFormAsForm fieldName={RootFormFields.CREDENTIALS} id='credentials'>

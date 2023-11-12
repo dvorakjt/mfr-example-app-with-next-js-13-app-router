@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { ProgrammingExperienceFields, RootFormFields } from "@/form-templates";
 import { ProgrammingLanguagesFieldset } from "./programming-languages-fieldset.component";
 import {
@@ -17,6 +18,10 @@ import { useRouter } from "next/navigation";
 export function ProgrammingExperienceForm() {
   useRedirectToFirstInvalidNestedForm();
   const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch('/form-completed');
+  }, [router]);
 
   return (
     <NestedFormAsForm fieldName={RootFormFields.PROGRAMMING_EXPERIENCE}>
