@@ -1,23 +1,22 @@
-'use client';
-import { NestedFormAsForm, SubmitButton } from "modeled-forms-react";
-import { Label } from "../labels/label.component";
-import { Input } from "../inputs/input/input.component";
-import { FieldMessages } from "../messages/field-messages/field-messages.component";
-import { FormMessages } from "../messages/form-messages/form-messages.component";
-import { ButtonsContainer } from "../util/buttons-container/buttons-container.component";
-import { ConfirmButton } from "../buttons/confirm-button.component";
-import { ResetButton } from "../buttons/reset-button.component";
-import { RootFormFields } from "@/form-templates/root-form.template";
-import { CredentialsFields } from "@/form-templates/credentials.template";
-import { Spacer } from "../util/spacers/spacer.component";
+import { CredentialsFields, RootFormFields } from "@/form-templates";
+import {
+  NestedFormAsForm,
+  Label,
+  Input,
+  FieldMessages,
+  FormMessages,
+  ButtonsContainer,
+  ConfirmButton,
+  ResetButton,
+  Spacer
+} from '@/components';
 import { useRouter } from "next/navigation";
-import styles from './styles.module.css';
 
 export function CredentialsForm() {
   const router = useRouter();
   
   return (
-    <NestedFormAsForm fieldName={RootFormFields.CREDENTIALS} id='credentials' className={styles.form}>
+    <NestedFormAsForm fieldName={RootFormFields.CREDENTIALS} id='credentials'>
       <Label fieldName={CredentialsFields.NAME}>Name</Label>
       <Input type='text' fieldName={CredentialsFields.NAME} />
       <FieldMessages fieldName={CredentialsFields.NAME} />

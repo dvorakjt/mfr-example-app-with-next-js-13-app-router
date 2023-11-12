@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import { useRedirectToFirstInvalidNestedForm } from "@/hooks/use-redirect-to-first-invalid-nested-form";
 
 export function FormValueDisplay() {
-  // useRedirectToFirstInvalidNestedForm();
+  useRedirectToFirstInvalidNestedForm();
 
   const formCtx = useContext(FormContext);
   if(!formCtx) throw new Error('FormValueDisplay cannot be rendered outside of a FormContext provider.');

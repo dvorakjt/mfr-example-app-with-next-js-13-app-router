@@ -4,8 +4,8 @@ import {
   required
 } from 'modeled-forms-react';
 import zipState from 'zip-state';
-import { US_STATE_ABBREVIATIONS } from './util/us-states/us-state-abbreviations';
-import { isZipCode } from './util/validators/is-zip-code';
+import { US_STATE_ABBREVIATIONS } from './util';
+import { isZipCode } from './util';
 
 export enum AddressFields {
   STREET_LINE_1 = 'streetLine1',

@@ -1,7 +1,6 @@
 'use client';
-import { PageContainer } from "@/components/util/page-container/page-container.component";
-import { ProgrammingExperienceForm } from "@/components/forms/programming-experience-form.component";
-import { FormMessages } from "@/components/messages/form-messages/form-messages.component";
+import { PageContainer, FormMessages } from "@/components";
+import { ProgrammingExperienceForm } from "@/app/programming-experience/programming-experience-form.component";
 
 export default function Addresses() {
   return (

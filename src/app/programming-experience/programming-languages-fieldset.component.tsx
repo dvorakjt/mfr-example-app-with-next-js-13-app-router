@@ -1,8 +1,9 @@
-import { NestedFormAsFieldset } from "modeled-forms-react";
-import { CheckboxInput } from "../inputs/checkbox/checkbox-input.component";
-import { ProgrammingLanguageFields } from "@/form-templates/programming-languages.template";
-import { Spacer } from "../util/spacers/spacer.component";
-import styles from './styles.module.css';
+import { ProgrammingLanguageFields } from "@/form-templates";
+import { 
+  NestedFormAsFieldset,
+  Legend,
+  CheckboxInput 
+} from "@/components";
 
 interface ProgrammingLanguagesProps {
   fieldName : string;
@@ -10,8 +11,8 @@ interface ProgrammingLanguagesProps {
 
 export function ProgrammingLanguagesFieldset({ fieldName } : ProgrammingLanguagesProps) {
   return (
-    <NestedFormAsFieldset fieldName={fieldName} className={styles.fieldset}>
-      <legend className={styles.legend}>Please select the programming languages you have worked with:</legend>
+    <NestedFormAsFieldset fieldName={fieldName}>
+      <Legend>Please select the programming languages you have worked with:</Legend>
       <CheckboxInput fieldName={ProgrammingLanguageFields.JAVASCRIPT} labelText="JavaScript" value="JavaScript" />
       <CheckboxInput fieldName={ProgrammingLanguageFields.TYPESCRIPT} labelText="TypeScript" value="TypeScript" />
       <CheckboxInput fieldName={ProgrammingLanguageFields.CSHARP} labelText="C#" value="C#" />

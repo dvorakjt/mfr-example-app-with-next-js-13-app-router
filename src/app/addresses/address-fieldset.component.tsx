@@ -1,11 +1,14 @@
-import { NestedFormAsFieldset } from "modeled-forms-react";
-import { AddressFields } from "@/form-templates/address.template";
-import { Label } from "../labels/label.component";
-import { Input } from "../inputs/input/input.component";
-import { Select } from "../inputs/select/select.component";
-import { FieldMessages } from "../messages/field-messages/field-messages.component";
-import { Spacer } from "../util/spacers/spacer.component";
-import { US_STATE_ABBREVIATIONS } from "@/form-templates/util/us-states/us-state-abbreviations";
+import { AddressFields } from "@/form-templates";
+import { 
+  NestedFormAsFieldset,
+  Legend,
+  Label,
+  Input, 
+  Select,
+  FieldMessages,
+  Spacer 
+} from '@/components';
+import { US_STATE_ABBREVIATIONS } from "@/form-templates";
 import styles from './styles.module.css';
 
 interface AddressFieldsetProps {
@@ -15,8 +18,8 @@ interface AddressFieldsetProps {
 
 export function AddressFieldset({ fieldName, legend } : AddressFieldsetProps) {
   return (
-    <NestedFormAsFieldset fieldName={fieldName} className={styles.fieldset}>
-      <legend className={styles.legend}>{legend}</legend>
+    <NestedFormAsFieldset fieldName={fieldName}>
+      <Legend>{legend}</Legend>
 
       <Spacer />
 

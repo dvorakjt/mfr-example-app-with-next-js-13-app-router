@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useLayoutEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { FormContext } from 'modeled-forms-react';
 import { RootFormFields } from "@/form-templates/root-form.template";
@@ -14,13 +14,7 @@ export function useRedirectToFirstInvalidNestedForm() {
   const pathname = usePathname();
   const router = useRouter();
 
-  useEffect(() => {
-    router.prefetch('/');
-    router.prefetch('/addresses');
-    router.prefetch('/programming-experience');
-  }, [router]);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     switch(pathname) {
       case '/form-completed' :
         if(firstNonValidFormElement === RootFormFields.PROGRAMMING_EXPERIENCE) {

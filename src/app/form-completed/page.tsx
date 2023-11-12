@@ -1,5 +1,5 @@
-import { FormValueDisplay } from "@/components/util/form-value/form-value-display.component";
-import { PageContainer } from "@/components/util/page-container/page-container.component";
+'use client';
+import { PageContainer, FormValueDisplay } from '@/components';
 
 export default function FormCompleted() {
   return (

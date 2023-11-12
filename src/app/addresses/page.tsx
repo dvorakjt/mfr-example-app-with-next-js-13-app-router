@@ -1,5 +1,6 @@
-import { PageContainer } from "@/components/util/page-container/page-container.component";
-import { AddressesForm } from "@/components/forms/addresses-form.component";
+'use client';
+import { PageContainer } from "@/components";
+import { AddressesForm } from "@/app/addresses/addresses-form.component";
 
 export default function Addresses() {
   return (
